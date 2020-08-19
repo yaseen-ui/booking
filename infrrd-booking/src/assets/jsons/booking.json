@@ -1,0 +1,13 @@
+{
+    "status":true,
+    "data": {
+        "id": 1,
+        "meetingAgenda": "Discussion involves with CEO about sprint 3 planning and challenges",
+        "name": "Thanos",
+        "meetingName": "Sprint 3",
+        "bookingStatus": "active",
+        "fromDate": "03/08/2020",
+        "toDate": "03/08/2020",
+        "time": "From 9 am to 10 am"
+      }
+}

@@ -1,0 +1,32 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/booking">Bookings</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{bookingId? 'Edit': 'Add'}} Booking</li>
+    </ol>
+</nav>
+
+<div class="container">
+    <div class="row form-group">
+        <div class="col-md-6">
+            <label>From Date</label>
+            <input type="datetime-local" class="form-control" [(ngModel)]="bookingData.fromDate">
+        </div>
+        <div class="col-md-6">
+            <label>To Date</label>
+            <input type="datetime-local" class="form-control" [(ngModel)]="bookingData.toDate">
+        </div>
+        <div class="col-md-6">
+            <label>Meeting Name</label>
+            <input class="form-control" id="meetingName" type="text" [(ngModel)]="bookingData.meetingName">
+        </div>  
+        <div class="col-md-12">        
+            <label>Agenda</label>
+            <textarea class="form-control" rows="4" [(ngModel)]="bookingData.meetingAgenda"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a  class="btn btn-primary form-control" (click)="saveBooking()">Save</a>
+        </div>
+    </div>
+</div>

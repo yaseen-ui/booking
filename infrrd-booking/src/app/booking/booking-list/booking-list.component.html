@@ -1,0 +1,23 @@
+  <div class="row form-group">
+    <div class="col-md-9">
+      <input class="form-control" [(ngModel)]="filterBooking.meetingName" placeholder="search booking name..">
+    </div>
+    <div class="col-md-3">
+      <a [routerLink]="['/booking/add']" class="btn btn-primary form-control"> Add New Booking </a>
+    </div>
+  </div>
+  <ng-container *ngIf="bookingList">
+    <div *ngFor="let booking of bookingList | filterBy: filterBooking; let i= index" class="list-group">
+      <a [routerLink]="['/booking/edit', booking.id]"
+        class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{booking.meetingName}}</h5>
+          <small>{{booking.bookingStatus}}</small>
+        </div>
+        <p class="mb-1">{{booking.meetingAgenda}}</p>
+        <small>Created by: {{booking.name}}</small>
+        <small class="float-right">Timings: {{booking.fromDate}} - {{booking.toDate}}</small>
+        <small class="float-right dlt-link" (click)="deleteBooking($event,i)">Delete</small>
+      </a>
+    </div>
+  </ng-container>
